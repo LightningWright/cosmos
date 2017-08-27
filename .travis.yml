@@ -5,6 +5,7 @@ compiler:
 
 before_install:
 - sudo apt-get install -qq cmake libsdl2-dev -y
+- cd cosmos
 - mkdir build
 - cd build
 - cmake ..
