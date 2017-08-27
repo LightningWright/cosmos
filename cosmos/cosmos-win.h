@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include "sdl2\include\SDL.h"
 
 void initConsole() {
 	FILE* stream;

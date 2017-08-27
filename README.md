@@ -1,5 +1,7 @@
 # **COSMOS** _CHIP-8 Interpreter_
 
+[![Build Status](https://travis-ci.org/LightningWright/cosmos.svg?branch=master)](https://travis-ci.org/LightningWright/cosmos)
+
 ### Work In Progress.
 
 cosmos is a CHIP-8 VM Interpreter developed in C++. It uses SDL2 to render the screen and emulate sound.

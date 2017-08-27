@@ -1,16 +1,15 @@
 #ifndef COSMOS_H
 #define COSMOS_H
 
-#include "sdl2\include\SDL.h"
 #include <iostream>
-#include <stdint.h> 
+#include <stdint.h>
 #include <stdlib.h>
 
 #ifdef _WIN64
 #include "cosmos-win.h"
 #endif // _WIN64
 
-#ifdef linux
+#ifdef __linux__
 #include "cosmos-lin.h"
 #endif // linux
 
@@ -41,27 +40,5 @@ static void audCallback(void* userdata, Uint8* stream, int len) {
 		if (audData->pos > 1000) { audData->pos = 0; }
 	}
 }
-
-
-/*
-string err[20] = {};
-
-	string sdlErr[10] = 
-	{
-		"",
-		"",
-	};
-	
-	string ioErr[10] =
-	{
-		"[ERROR] [IO] Failed to Load ROM.",
-		"[ERROR] [IO] Failed to Read ROM.",
-	};
-
-	string memErr[10] =
-	{
-		"[ERROR] [MEM] Failed to Allocate RAM for ROM.",
-		"[ERROR] [MEM] ROM file size exceeds RAM size.",
-	};*/
 
 #endif // COSMOS_H
