@@ -10,4 +10,4 @@ before_install:
 - cd build
 - cmake ..
 
-script: make && ./cosmos
+script: make
