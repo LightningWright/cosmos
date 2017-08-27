@@ -1,0 +1,12 @@
+language: cpp
+
+compiler:
+  - g++
+
+before_install:
+- sudo apt-get install -qq cmake libsdl2-dev -y
+- mkdir build
+- cd build
+- cmake ..
+
+script: make && ./cosmos
