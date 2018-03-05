@@ -4,7 +4,7 @@ compiler:
   - g++
 
 before_install:
-- sudo apt-get install -qq cmake libsdl2-dev -y
+- sudo apt install cmake libsdl2-dev libgles2-mesa-dev libegl1-mesa-dev -y -f
 - cd cosmos
 - mkdir build
 - cd build
