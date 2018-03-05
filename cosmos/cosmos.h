@@ -25,8 +25,7 @@ SDL_AudioSpec* audSpec;
 SDL_AudioDeviceID audDevID;
 struct AudioData* audData;
 
-uint32_t TARGET_FPS = 60;
-uint8_t TARGET_IPS = 10;
+
 uint8_t MULT = 16;
 bool limitFPS = true;
 

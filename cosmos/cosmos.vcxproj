@@ -75,8 +75,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Victor\Documents\Visual Studio 2017\Projects\cosmos\cosmos\sdl2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Victor\Documents\Visual Studio 2017\Projects\cosmos\cosmos\sdl2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Documentos\GitHub\libs\SDL2-2.0.7\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Documentos\GitHub\libs\SDL2-2.0.7\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -103,8 +103,9 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>EnableAllWarnings</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>Custom</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

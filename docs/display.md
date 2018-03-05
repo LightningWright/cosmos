@@ -18,7 +18,7 @@ Sprites has a binary representation of what will be seen on the screen.
 
 To see a real example we are going to create a sprite. For this example the sprite will be a exclamation and a question mark. Like this one  ![](img/sprite.png).
 
-_For the better understanding I have represented the active pixels (aka 1's) in black._
+_For better understanding I have represented the active pixels (aka 1's) in black._
 
 Now we have to translate to binary this sprite, it is very easy due to the simplicity of a monochrome screen. Then, we convert binary to hexadecimal to be able to store the sprite in memory. _A example of what the rendering code does :_
 
@@ -62,7 +62,7 @@ case 0xD000:
 
         //In this particular interpreter uint32_t screen[] is a SDL texture buffer.
         //That practise prevents the execution of a 2048 iteration loop
-        //needed to copy uint8 data, (like other interpreters does), into a
+        //needed to copy uint8 data, (like other interpreters do), into a
         //compatible uint32_t SDL texture data.
 
       }

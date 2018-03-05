@@ -16,19 +16,18 @@ uint8_t keymap[16] = {
 
 RCA1802 cpu = RCA1802();	// Virtual MachineObjectVirtual Machine Obj.
 uint32_t ticks;				// VM execution time, (milliseconds)
+uint32_t sdtick = 0;
 
 void toggleDebug() {
 
 	if (cpu.debug) {
 		hideConsole(0);
-		TARGET_FPS = 60;
-		TARGET_IPS = 10;
+		
 		cpu.debug = false;
 	}
 	else {
 		hideConsole(9);
-		TARGET_FPS = 120;
-		TARGET_IPS = 1;
+		
 		cpu.debug = true;
 	}
 }
@@ -85,11 +84,12 @@ int main(int argc, char *argv[]) {
 
 	cpu.resetState();
 	if (!cpu.loadBinary(argv[1])) { return 2; }	//Load ROM
-
+	hideConsole(9);
 	// Main Loop (60Hz)
 	while (true) {
 
-		for (int i = 0; i < TARGET_IPS; i++) { cpu.fetch(); cpu.execute(); }
+		cpu.fetch(); cpu.execute();
+
 
 		if (cpu.dT > 0) { --cpu.dT; } // Delay Timer
 
@@ -170,8 +170,11 @@ int main(int argc, char *argv[]) {
 
 		// SDL Slowdown: LoopTime_Spent + X = 16.6 millisecs
 
-		if ((1000 / TARGET_FPS > SDL_GetTicks() - ticks) && limitFPS) {
-			SDL_Delay(1000 / TARGET_FPS - (SDL_GetTicks() - ticks));
+		sdtick++;
+		if (sdtick >= 7) { sdtick = 0; } //60HZ
+
+		if ((1000 / 500 > SDL_GetTicks() - ticks) && limitFPS) { //500HZ
+			SDL_Delay(1000 / 500 - (SDL_GetTicks() - ticks));
 		}
 	}
 }
